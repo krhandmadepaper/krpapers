@@ -33,7 +33,7 @@
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 					<a href="../Home/index.php" class="txt2">
-						Go To Home Page
+						Go To Home 
 				   </a>
 				<form class="login100-form validate-form" action="loginreply.php" method="post" onSubmit="return validation()">
 					<span class="login100-form-title p-b-49">
