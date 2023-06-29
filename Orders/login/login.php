@@ -54,7 +54,7 @@
 					
 					<div class="text-right p-t-8 p-b-31">
 						<a href="#">
-							Forgot password?
+							Forgot password
 						</a>
 					</div>
 					
@@ -62,7 +62,7 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button type="submit" class="login100-form-btn">
-								Login
+								Login Here
 							</button>
 						</div>
 					</div>
