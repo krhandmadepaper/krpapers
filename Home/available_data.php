@@ -11,19 +11,19 @@ if($con)
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    <!-- Required meta tags --> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <?php include "navbar.php"; ?>
   </head>
   <body style ="background-color:rgba(242, 177, 153, .9) ;">
     <div class="container" style="padding:30px"></div>
     <div class="container" style ="background-color:rgb(195, 201, 194) ;">
-      <div class="row" style="padding-top: 58px;padding-bottom: 28px;">   
+    <a class="nav-link previous active" href="javascript:history.back()">Previous</a>
+      <div class="row" style="padding-top: 28px;padding-bottom: 28px;">   
         <div class="col-xl-4">
           <div class="card" style="background: rgb(250, 230, 232);">
             <div class="card-body">
@@ -58,6 +58,23 @@ if($con)
             </div>
           </div>
         </div>
+        <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal with Dynamic Content</h4>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
       </div>
     </div>
     <!-- Optional JavaScript -->
