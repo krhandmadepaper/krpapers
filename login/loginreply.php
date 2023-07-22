@@ -1,22 +1,22 @@
 <?php 
 session_start();
-$email = $_POST['email'];
+$id = $_POST['id'];
 $pwd = $_POST['pwd'];
 include "connection.php";
 if($con){
-    $sql = "SELECT * FROM `users`  WHERE email ='$email' AND password = '$pwd'";
+    $sql = "SELECT * FROM `Login`  WHERE id ='$id' AND Password = '$pwd'";
     $result = mysqli_query($con,$sql);
     $result1 = mysqli_fetch_assoc($result);
     $row = mysqli_num_rows($result);
     if($row){
-        if($result1['user']=='0'){
-            $_SESSION['unique_id'] = $email;
-             header("Location:../Client/dashboard.php");
+        if($result1['Type']=='Admin'){
+            $_SESSION['id'] = $id;
+             header("Location:../Orders/Admin/dashboard.php");
         }
        else
         {
-            $_SESSION['id'] = $email;
-            header("Location:../Admin/dashboardpremium.php");
+            $_SESSION['id'] = $id;
+            header("Location:../Orders/Client/dashboard.php");
         }
     }
     else{
