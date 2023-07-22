@@ -41,13 +41,13 @@
         </div>
         <div class="col-xl-4">
           <div class="card" style="background: rgb(228, 224, 224);">
-            <div class="card-body">
+            <!-- <div class="card-body">
               <i class='fas fa-boxes'></i>
                 <h5 class="card-title" >
                   <a href="">View stock history</a>
                 </h5>
-                <!-- <a href="" class="btn btn-primary">Open</a> -->
-            </div>
+                <a href="" class="btn btn-primary">Open</a>
+            </div> --> 
           </div>
         </div>
       </div>

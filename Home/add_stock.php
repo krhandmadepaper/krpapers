@@ -34,6 +34,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12">
                     <div class="wrapper">
+                    <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
                         <div class="row justify-content-center">
 
                             <div class="col-lg-8" >

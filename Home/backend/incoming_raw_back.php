@@ -79,7 +79,7 @@ if ($con) {
             ?>
             <script>
                 window.alert("Data Added Successfully");
-                window.location.href = "../index.php";
+                window.location.href = "../stock_dashboard.php";
             </script>
             <?php
         } else {
@@ -91,20 +91,12 @@ if ($con) {
             <?php
         }
     } else {
-        echo $sql;
         ?>
         <script>
-            // window.alert("Adding data failed");
-            // window.location.href = "../add_incoming_raw_material.php";
+            window.alert("Adding data failed");
+            window.location.href = "../add_incoming_raw_material.php";
         </script>
         <?php
     }
-} else {
-    ?>
-    <script>
-        window.alert("Database Connection failed");
-        window.location.href = "../index.php";
-    </script>
-    <?php
-}
+ 
 ?>
