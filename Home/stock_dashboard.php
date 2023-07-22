@@ -59,7 +59,7 @@
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
-                  <a href="add_daily_data.php">Update Used Material</a>
+                  <a href="add_daily_data.php">Update Used Stock</a>
                 </h5>
                 <!-- <a href="add_daily_data.php" class="btn btn-primary">Open</a> -->
             </div>
@@ -70,7 +70,7 @@
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
-                  <a href="add_stock.php">Update Stock</a>
+                  <a href="add_stock.php">Update Unused Stock</a>
                 </h5>
                 <!-- <a href="add_stock.php" class="btn btn-primary">Open</a> -->
             </div>
