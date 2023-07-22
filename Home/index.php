@@ -11,7 +11,7 @@
   </head>
   <body style ="background-color:rgba(164, 189, 250, 0.288) ;">
   <div class="container" style="padding:30px"></div>
-    <div class="container" style ="background-color:rgb(195, 201, 194) ;">
+    <div class="container" style ="background-color:rgb(195, 201, 194) ;padding-top:20px">
     <!-- <a class="nav-link previous active" href="javascript:history.back()">Previous</a><i class="fas fa-cat"></i> -->
     <a class="btn btn-danger" style="padding-top:10px" href="javascript:history.back()">Previous</a>
 
@@ -46,8 +46,21 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
+                <div class="container" style ="background-color:rgb(195, 201, 194) ;">
+                <div class="row" style="padding-top: 28px;">
+                <div class="col-xl-12">
+                    <div class="card" style="background: rgb(228, 224, 224);">
+                        <div class="card-body">
+                          <i class='fas fa-boxes'></i>
+                            <h5 class="card-title" >Shipping Details</h5>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            <a href="#" class="btn btn-primary">Open</a>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                </div>
+                </div>
           <!-- </span> -->
     </div>
 

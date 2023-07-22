@@ -41,6 +41,17 @@
             </div>
           </div>
         </div>
+        <div class="col-xl-4">
+          <div class="card" style="white">
+            <div class="card-body">
+                <i class='fas fa-dolly'></i>
+                <h5 class="card-title" >
+                  <a href="add_daily_data.php">Update Used Stock</a>
+                </h5>
+                <!-- <a href="add_daily_data.php" class="btn btn-primary">Open</a> -->
+            </div>
+          </div>
+        </div>
         <!-- <div class="col-xl-4"> -->
           <!-- <div class="card" style="white"> -->
             <!-- <div class="card-body">
@@ -56,29 +67,29 @@
     </div>
     <div class="container" style ="background-color:rgb(195, 201, 194) ;">
       <div class="row" style="padding-bottom: 28px;">
-        <div class="col-xl-4">
+        <!-- <div class="col-xl-4">
           <div class="card" style="white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
                   <a href="add_daily_data.php">Update Used Stock</a>
                 </h5>
-                <!-- <a href="add_daily_data.php" class="btn btn-primary">Open</a> -->
+                 <a href="add_daily_data.php" class="btn btn-primary">Open</a>
             </div>
           </div>
-        </div>
-        <div class="col-xl-4">
+        </div> -->
+        <div class="col-xl-6">
           <div class="card" style="background: white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
-                  <a href="add_stock.php">Update Unused Stock</a>
+                  <a href="add_stock.php" >Update Unused Stock</a>
                 </h5>
                 <!-- <a href="add_stock.php" class="btn btn-primary">Open</a> -->
             </div>
           </div>
         </div>
-        <div class="col-xl-4">
+        <div class="col-xl-6">
           <div class="card" style="background: white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
