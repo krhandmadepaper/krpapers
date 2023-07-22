@@ -16,7 +16,7 @@
   <body style ="background-color:rgba(242, 177, 153, .9) ;" >
       <div class="container" style="padding-top:50px;">
 
-  <table class="table table-hover table-dark">
+  <table class="table table-hover table-light">
 
             <thead>
                 <tr>
@@ -41,8 +41,8 @@
                 <tr>
                 
                 <td><?php echo $data["d_id"] ?></td>
-                <td><?php echo $data["date"] ?></td>
-                <td><?php echo $data["time"] ?></td>
+                <td><?php echo date('jS F, Y', strtotime($data["date"])); ?></td>
+                <td><?php echo date('g:i A', strtotime($data["time"] )); ?></td>
                 <td><?php echo $data["hoisery"] ?>   KG</td>
                 <td><?php echo $data["ntbt"] ?>   KG</td>
                 <td><?php echo $data["bleech"] ?>   KG</td>
