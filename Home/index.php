@@ -13,7 +13,7 @@
   <div class="container" style="padding:30px"></div>
     <div class="container" style ="background-color:rgb(195, 201, 194) ;">
     <!-- <a class="nav-link previous active" href="javascript:history.back()">Previous</a><i class="fas fa-cat"></i> -->
-    <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
+    <a class="btn btn-danger" style="padding-top:10px" href="javascript:history.back()">Previous</a>
 
     <div class="row" style="padding-top: 28px;padding-bottom: 28px;">   
                 <div class="col-xl-4">

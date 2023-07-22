@@ -12,13 +12,13 @@
   </head>
   <body style ="background-color:rgba(242, 177, 153, .9) ;">
     <div class="container" style="padding:30px"></div>
-    <div class="container" style ="background-color:rgb(195, 201, 194) ;">
+    <div class="container" style ="background-color:rgb(195, 201, 194) ;padding-top:20px">
     <!-- <a class="nav-link previous active" href="javascript:history.back()">Previous</a> -->
-    <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
+    <a class="btn btn-danger"  href="javascript:history.back()">Previous</a>
 
     <div class="row" style="padding-top: 28px;padding-bottom: 28px;">  
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(250, 230, 232);">
+          <div class="card" style="background: white">
             <div class="card-body">
               <a href="add_stock.php">
                 <i class='fas fa-dolly'></i>
@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+          <div class="card" style="white">
             <div class="card-body">
               <i class='far fa-clipboard'></i>
                 <h5 class="card-title">
@@ -41,8 +41,8 @@
             </div>
           </div>
         </div>
-        <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+        <!-- <div class="col-xl-4"> -->
+          <!-- <div class="card" style="white"> -->
             <!-- <div class="card-body">
               <i class='fas fa-boxes'></i>
                 <h5 class="card-title" >
@@ -50,14 +50,14 @@
                 </h5>
                 <a href="" class="btn btn-primary">Open</a>
             </div> --> 
-          </div>
-        </div>
+          <!-- </div> -->
+        <!-- </div> -->
       </div>
     </div>
     <div class="container" style ="background-color:rgb(195, 201, 194) ;">
       <div class="row" style="padding-bottom: 28px;">
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+          <div class="card" style="white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
@@ -68,7 +68,7 @@
           </div>
         </div>
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+          <div class="card" style="background: white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+          <div class="card" style="background: white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
