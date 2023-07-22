@@ -12,8 +12,10 @@
   <body style ="background-color:rgba(164, 189, 250, 0.288) ;">
   <div class="container" style="padding:30px"></div>
     <div class="container" style ="background-color:rgb(195, 201, 194) ;">
-    <a class="nav-link previous active" href="javascript:history.back()">Previous</a><i class="fas fa-cat"></i>
-      <div class="row" style="padding-top: 28px;padding-bottom: 28px;">   
+    <!-- <a class="nav-link previous active" href="javascript:history.back()">Previous</a><i class="fas fa-cat"></i> -->
+    <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
+
+    <div class="row" style="padding-top: 28px;padding-bottom: 28px;">   
                 <div class="col-xl-4">
                     <div class="card" style="background: rgb(228, 224, 224);">
                         <div class="card-body">

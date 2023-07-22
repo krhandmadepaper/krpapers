@@ -19,8 +19,9 @@
   <table class="table table-hover table-light">
 
             <thead>
-            <a style= "background-color:rgb(233,154,125);font-color:black" class="col-xl-2 nav-link previous " href="javascript:history.back()">Previous</a>
-              
+            <!-- <a style= "background-color:rgb(233,154,125);font-color:black" class="col-xl-2 nav-link previous " href="javascript:history.back()">Previous</a> -->
+            <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
+ 
             <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
