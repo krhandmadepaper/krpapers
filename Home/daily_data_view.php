@@ -19,8 +19,9 @@
   <table class="table table-hover table-light">
 
             <thead>
-                <tr>
-                <th scope="col">ID</th>
+            <a style= "background-color:rgb(233,154,125);font-color:black" class="col-xl-2 nav-link previous " href="javascript:history.back()">Previous</a>
+              
+            <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
                 <th scope="col">Hoisery</th>
@@ -40,7 +41,6 @@
         { ?>
                 <tr>
                 
-                <td><?php echo $data["d_id"] ?></td>
                 <td><?php echo date('jS F, Y', strtotime($data["date"])); ?></td>
                 <td><?php echo date('g:i A', strtotime($data["time"] )); ?></td>
                 <td><?php echo $data["hoisery"] ?>   KG</td>
