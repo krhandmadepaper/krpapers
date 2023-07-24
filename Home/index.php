@@ -39,7 +39,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                           <i class='far fa-clipboard'></i>
                             <h5 class="card-title">Order Details</h5>
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                            <a href="#" class="btn btn-primary">Open</a>
+                            <a href="../orders/Admin/Dashboard.php" class="btn btn-primary">Open</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                           <i class='fas fa-boxes'></i>
                             <h5 class="card-title" >Suppliers</h5>
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                            <a href="#" class="btn btn-primary">Open</a>
+                            <a href="../Suppliers/Dashboard.php" class="btn btn-primary">Open</a>
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                           <i class='fas fa-boxes'></i>
                             <h5 class="card-title" >Shipping Details</h5>
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                            <a href="#" class="btn btn-primary">Open</a>
+                            <a href="../Shipping/Dashboard.php" class="btn btn-primary">Open</a>
                         </div>
                       </div>
                   </div>
