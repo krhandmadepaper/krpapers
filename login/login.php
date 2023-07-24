@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// Check if the user is already logged in
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_type'])) {
+    // Redirect to the appropriate dashboard based on the user's type
+    if ($_SESSION['user_type'] === 'Admin') {
+        header("Location: ../Orders/Admin/dashboard.php");
+        exit();
+    } elseif ($_SESSION['user_type'] === 'Client') {
+        header("Location: ../Orders/Client/dashboard.php");
+        exit();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
