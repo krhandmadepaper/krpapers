@@ -1,4 +1,5 @@
 
+
 <nav class="navbar navbar-expand-lg navbar-light " style ="background-color:white ;">
         <a class="navbar-brand" style="font-size: 30px;" href="#">KR Enterprises</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,9 +27,10 @@
               </div>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link disabled" href="../login/Login.php">Login</a>
+              <a class="nav-link disabled" href="../Orders/Admin/Dashboard.php">Login</a>
             </li>
           </ul>
           
         </div>
       </nav>
+      

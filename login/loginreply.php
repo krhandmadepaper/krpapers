@@ -14,7 +14,7 @@ if ($con) {
         if ($result1['Type'] == 'Admin') {
             $_SESSION['user_id'] = $id; // Store the user ID in the session
             $_SESSION['user_type'] = 'Admin'; // Store the user type in the session
-            header("Location: ../Orders/Admin/dashboard.php");
+            header("Location: ../Home/Index.php");
         } else {
             $_SESSION['user_id'] = $id; // Store the user ID in the session
             $_SESSION['user_type'] = 'Client'; // Store the user type in the session
