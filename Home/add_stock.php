@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+session_start();
+if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
+    // The user is logged in as an Admin, show the dashboard content for Admin
+    ?><!doctype html>
 <html lang="en">
 
 <head>
@@ -34,6 +38,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-md-12">
                     <div class="wrapper">
+                    <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
                         <div class="row justify-content-center">
 
                             <div class="col-lg-8" >
@@ -101,3 +106,9 @@
 </body>
 
 </html>
+<?php
+} else {
+    header("Location: ../login/login.php"); // Redirect to the login page if not logged in or not an Admin
+    exit();
+}
+?>

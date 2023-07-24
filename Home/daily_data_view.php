@@ -1,24 +1,33 @@
+<?php
+session_start();
 
+if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
+    // The user is logged in as an Admin, show the dashboard content for Admin
+    ?>
 <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    
+    <title>Daily Usage</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-    <title>Hello, world!</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <?php include "navbar.php"; ?>
   </head>
-  <body class="container">
-      <div style="padding-top:50px;">
+  <body style ="background-color:rgba(242, 177, 153, .9) ;" >
+      <div class="container" style="padding-top:50px;">
 
-  <table class="table table-hover table-dark">
+  <table class="table table-hover table-light">
 
             <thead>
-                <tr>
-                <th scope="col">ID</th>
+            <!-- <a style= "background-color:rgb(233,154,125);font-color:black" class="col-xl-2 nav-link previous " href="javascript:history.back()">Previous</a> -->
+            <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
+ 
+            <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
                 <th scope="col">Hoisery</th>
@@ -38,9 +47,8 @@
         { ?>
                 <tr>
                 
-                <td><?php echo $data["d_id"] ?></td>
-                <td><?php echo $data["date"] ?></td>
-                <td><?php echo $data["time"] ?></td>
+                <td><?php echo date('jS F, Y', strtotime($data["date"])); ?></td>
+                <td><?php echo date('g:i A', strtotime($data["time"] )); ?></td>
                 <td><?php echo $data["hoisery"] ?>   KG</td>
                 <td><?php echo $data["ntbt"] ?>   KG</td>
                 <td><?php echo $data["bleech"] ?>   KG</td>
@@ -61,3 +69,9 @@
   </body>
 </html>
 
+<?php
+} else {
+    header("Location: ../login/login.php"); // Redirect to the login page if not logged in or not an Admin
+    exit();
+}
+?>

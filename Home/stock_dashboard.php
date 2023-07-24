@@ -1,4 +1,11 @@
-<!doctype html>
+
+<?php
+session_start();
+
+if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
+    // The user is logged in as an Admin, show the dashboard content for Admin
+    ?>
+    <!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,10 +19,13 @@
   </head>
   <body style ="background-color:rgba(242, 177, 153, .9) ;">
     <div class="container" style="padding:30px"></div>
-    <div class="container" style ="background-color:rgb(195, 201, 194) ;">
-      <div class="row" style="padding-top: 58px;padding-bottom: 28px;">   
+    <div class="container" style ="background-color:rgb(195, 201, 194) ;padding-top:20px">
+    <!-- <a class="nav-link previous active" href="javascript:history.back()">Previous</a> -->
+    <a class="btn btn-danger"  href="javascript:history.back()">Previous</a>
+
+    <div class="row" style="padding-top: 28px;padding-bottom: 28px;">  
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(250, 230, 232);">
+          <div class="card" style="background: white">
             <div class="card-body">
               <a href="add_stock.php">
                 <i class='fas fa-dolly'></i>
@@ -28,7 +38,7 @@
           </div>
         </div>
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+          <div class="card" style="white">
             <div class="card-body">
               <i class='far fa-clipboard'></i>
                 <h5 class="card-title">
@@ -39,44 +49,55 @@
           </div>
         </div>
         <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
-            <div class="card-body">
-              <i class='fas fa-boxes'></i>
-                <h5 class="card-title" >
-                  <a href="">View stock history</a>
-                </h5>
-                <!-- <a href="" class="btn btn-primary">Open</a> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container" style ="background-color:rgb(195, 201, 194) ;">
-      <div class="row" style="padding-bottom: 28px;">
-        <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+          <div class="card" style="white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
-                  <a href="add_daily_data.php">Update Used Material</a>
+                  <a href="add_daily_data.php">Update Used Stock</a>
                 </h5>
                 <!-- <a href="add_daily_data.php" class="btn btn-primary">Open</a> -->
             </div>
           </div>
         </div>
-        <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+        <!-- <div class="col-xl-4"> -->
+          <!-- <div class="card" style="white"> -->
+            <!-- <div class="card-body">
+              <i class='fas fa-boxes'></i>
+                <h5 class="card-title" >
+                  <a href="">View stock history</a>
+                </h5>
+                <a href="" class="btn btn-primary">Open</a>
+            </div> --> 
+          <!-- </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="container" style ="background-color:rgb(195, 201, 194) ;">
+      <div class="row" style="padding-bottom: 28px;">
+        <!-- <div class="col-xl-4">
+          <div class="card" style="white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
-                  <a href="add_stock.php">Update Stock</a>
+                  <a href="add_daily_data.php">Update Used Stock</a>
+                </h5>
+                 <a href="add_daily_data.php" class="btn btn-primary">Open</a>
+            </div>
+          </div>
+        </div> -->
+        <div class="col-xl-6">
+          <div class="card" style="background: white">
+            <div class="card-body">
+                <i class='fas fa-dolly'></i>
+                <h5 class="card-title" >
+                  <a href="add_stock.php" >Update Unused Stock</a>
                 </h5>
                 <!-- <a href="add_stock.php" class="btn btn-primary">Open</a> -->
             </div>
           </div>
         </div>
-        <div class="col-xl-4">
-          <div class="card" style="background: rgb(228, 224, 224);">
+        <div class="col-xl-6">
+          <div class="card" style="background: white">
             <div class="card-body">
                 <i class='fas fa-dolly'></i>
                 <h5 class="card-title" >
@@ -95,3 +116,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php
+} else {
+    header("Location: ../login/login.php"); // Redirect to the login page if not logged in or not an Admin
+    exit();
+}
+?>

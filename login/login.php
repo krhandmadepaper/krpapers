@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// Check if the user is already logged in
+if (isset($_SESSION['user_id']) && isset($_SESSION['user_type'])) {
+    // Redirect to the appropriate dashboard based on the user's type
+    if ($_SESSION['user_type'] === 'Admin') {
+        header("Location: ../Orders/Admin/dashboard.php");
+        exit();
+    } elseif ($_SESSION['user_type'] === 'Client') {
+        header("Location: ../Orders/Client/dashboard.php");
+        exit();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,16 +48,16 @@
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
 					<a href="../Home/index.php" class="txt2">
-						Go To Home Page
+						Go To Home 
 				   </a>
 				<form class="login100-form validate-form" action="loginreply.php" method="post" onSubmit="return validation()">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
 
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Email is reauired">
-						<span class="label-input100">Email</span>	
-						<input class="input100" type="text" 	id="email" name="email" placeholder="Type your Email">
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Your ID is required">
+						<span class="label-input100">Id</span>	
+						<input class="input100" type="text" id="id" name="id" placeholder="Enter your ID">
 						<span class="focus-input100" data-symbol="&#xf206;"></span>
                     </div>
 
@@ -53,8 +68,8 @@
 					</div>
 					
 					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
-							Forgot password?
+						<a href="forgotpw.php">
+							Forgot password
 						</a>
 					</div>
 					
@@ -62,7 +77,7 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button type="submit" class="login100-form-btn">
-								Login
+								Login Here
 							</button>
 						</div>
 					</div>
