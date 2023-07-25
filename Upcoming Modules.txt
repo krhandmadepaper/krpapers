@@ -1,0 +1,19 @@
+Gsm calculator
+	size drop down
+Bucket calculator for pulp 
+how many sheets have to be made for that based on pulp per sheet how much pulp is required total weight
+
+production order page
+	Production Order ID: A unique identifier for each production order, usually generated automatically.
+
+	Product Name: The name or description of the product being produced.
+
+	Quantity: The quantity of the product to be produced in this order.
+
+	Order Date: The date when the production order was created.
+
+	Due Date: The date by which the production order needs to be completed.
+
+	Priority: An indication of the order's priority, which can be used for scheduling and prioritizing production.
+
+	Status: The current status of the production order (e.g., scheduled, in progress, completed, canceled).
