@@ -18,13 +18,18 @@ production order page
 
 	Status: The current status of the production order (e.g., scheduled, in progress, completed, canceled).
 
+
 Color mixing calculator
 
-        how to make up some calculator to calculate and find the quantity of color required in a perticular shade
-ChatGPT
-To create a calculator that calculates the quantity of color required to achieve a particular shade, you'll need to follow these steps:
+        how to make up some calculator to calculate and find the quantity of color required in a perticular 
+        shade
 
-Define the Target Shade: Decide on the target shade you want to achieve. This could be specified using RGB values, hexadecimal color codes, or any other color representation system.
+ChatGPT
+To create a calculator that calculates the quantity of color required to achieve a particular shade, 4
+you'll need to follow these steps:
+
+Define the Target Shade: Decide on the target shade you want to achieve. This could be specified using 
+RGB values, hexadecimal color codes, or any other color representation system.
 
 Color Database: Create a database that contains information about the colors you have available for mixing. Include the color's name, RGB values, or any other color representation you choose to work with.
 
