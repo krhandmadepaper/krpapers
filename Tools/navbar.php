@@ -9,14 +9,19 @@
           <ul class="navbar-nav mr-auto">
             
             <li class="nav-item active">
-              <a class="nav-link" href="Index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../Orders/Admin/index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../../Tools/Index.php">Tools</a>
+              <a class="nav-link" href="Bucketcalc.php">Bucket Calculator</a>
             </li>
-            
             <li class="nav-item">
-              <a class="nav-link " href = "../../login/logout.php">Logout</a>
+              <a class="nav-link" href="colormatch.php">Color Matching</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="GSMcalc.php">GSM Calculator</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href = "../login/logout.php">Logout</a>
             </li>
           </ul>
           

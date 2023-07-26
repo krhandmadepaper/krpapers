@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php include "navbar.php"; ?>
+
     <title>GSM Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <?php include"navbar.php" ?>
 
 </head>
 <body>
