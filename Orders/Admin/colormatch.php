@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php include"navbar.php" ?>
+
     <title>Color Mixing Calculator</title>
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -39,8 +41,6 @@
             }
         }
     </style>
-        <?php include"navbar.php" ?>
-
 </head>
 <body>
     <div class="container mt-5">
@@ -54,26 +54,26 @@
                     </div>
                     <div class="form-group">
                         <label for="red">Red:</label>
-                        <input type="range" id="redSlider" name="redSlider" min="0" max="255" class="form-control-range" oninput="updateSlider('redSlider', 'redText')">
-                        <input type="text" id="redText" name="redText" placeholder="0" class="form-control" oninput="updateInput('redSlider', 'redText')">
+                        <input type="range" id="redSlider" name="redSlider" min="0" max="255" class="form-control-range" oninput="updateSlider('redSlider', 'redText')" <?php if (isset($_POST["redSlider"])) { echo 'value="' . $_POST["redSlider"] . '"'; } ?>>
+                        <input type="text" id="redText" name="redText" placeholder="0" class="form-control" oninput="updateInput('redSlider', 'redText')" <?php if (isset($_POST["redText"])) { echo 'value="' . $_POST["redText"] . '"'; } ?>>
                     </div>
                     <div class="form-group">
                         <label for="green">Green:</label>
-                        <input type="range" id="greenSlider" name="greenSlider" min="0" max="255" class="form-control-range" oninput="updateSlider('greenSlider', 'greenText')">
-                        <input type="text" id="greenText" name="greenText" placeholder="0" class="form-control" oninput="updateInput('greenSlider', 'greenText')">
+                        <input type="range" id="greenSlider" name="greenSlider" min="0" max="255" class="form-control-range" oninput="updateSlider('greenSlider', 'greenText')" <?php if (isset($_POST["greenSlider"])) { echo 'value="' . $_POST["greenSlider"] . '"'; } ?>>
+                        <input type="text" id="greenText" name="greenText" placeholder="0" class="form-control" oninput="updateInput('greenSlider', 'greenText')" <?php if (isset($_POST["greenText"])) { echo 'value="' . $_POST["greenText"] . '"'; } ?>>
                     </div>
                     <div class="form-group">
                         <label for="blue">Blue:</label>
-                        <input type="range" id="blueSlider" name="blueSlider" min="0" max="255" class="form-control-range" oninput="updateSlider('blueSlider', 'blueText')">
-                        <input type="text" id="blueText" name="blueText" placeholder="0" class="form-control" oninput="updateInput('blueSlider', 'blueText')">
+                        <input type="range" id="blueSlider" name="blueSlider" min="0" max="255" class="form-control-range" oninput="updateSlider('blueSlider', 'blueText')" <?php if (isset($_POST["blueSlider"])) { echo 'value="' . $_POST["blueSlider"] . '"'; } ?>>
+                        <input type="text" id="blueText" name="blueText" placeholder="0" class="form-control" oninput="updateInput('blueSlider', 'blueText')" <?php if (isset($_POST["blueText"])) { echo 'value="' . $_POST["blueText"] . '"'; } ?>>
                     </div>
                     <div class="form-group">
                         <label for="pulpWeight">Pulp Weight (in kg):</label>
-                        <input type="number" id="pulpWeight" name="pulpWeight" min="0" step="0.01" class="form-control">
+                        <input type="number" id="pulpWeight" name="pulpWeight" min="0" step="0.01" class="form-control" <?php if (isset($_POST["pulpWeight"])) { echo 'value="' . $_POST["pulpWeight"] . '"'; } ?>>
                     </div>
                     <div class="form-group">
                         <label for="concentration">Concentration (%):</label>
-                        <input type="number" id="concentration" name="concentration" min="0" max="100" step="0.01" value="100" class="form-control">
+                        <input type="number" id="concentration" name="concentration" min="0" max="100" step="0.01" value="100" class="form-control" <?php if (isset($_POST["concentration"])) { echo 'value="' . $_POST["concentration"] . '"'; } ?>>
                     </div>
                     <button type="submit" class="btn btn-primary">Calculate</button>
                 </form>
