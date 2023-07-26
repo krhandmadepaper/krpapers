@@ -7,22 +7,20 @@
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        body {
+            background-image: url("path/to/your/bg-image.jpg"); /* Replace with your image path */
+            background-size: cover;
+        }
+
         .color-grid {
             width: 100%;
             height: 150px;
             border: 1px solid #ccc;
-            background-color: #f8f9fa; /* New background color */
+            background-color: #f8f9fa;
+            /* Add other styling for the color grid if needed */
         }
 
-        .selected-color {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #000;
-            margin: 5px;
-            float: left;
-        }
-
-        /* Custom CSS for output section */
+        /* Add styling for the output section */
         .output-section {
             background-color: #f0f0f0;
             border-radius: 5px;
@@ -78,11 +76,11 @@
                     <button type="submit" class="btn btn-primary">Calculate</button>
                 </form>
             </div>
-            <div class="col-md-6 col-xl-4">
+            <div class="col-md-3 col-xl-6">
                 <div class="output-section">
                     <!-- Output will be displayed here -->
                     <?php
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $red = isset($_POST["redSlider"]) ? (int)$_POST["redSlider"] : (isset($_POST["redText"]) ? (int)$_POST["redText"] : 0);
                         $green = isset($_POST["greenSlider"]) ? (int)$_POST["greenSlider"] : (isset($_POST["greenText"]) ? (int)$_POST["greenText"] : 0);
                         $blue = isset($_POST["blueSlider"]) ? (int)$_POST["blueSlider"] : (isset($_POST["blueText"]) ? (int)$_POST["blueText"] : 0);
@@ -117,24 +115,64 @@
                         $magentaWeight_concentration = $magentaWeight * $concentrationFactor;
                         $yellowWeight_concentration = $yellowWeight * $concentrationFactor;
                         $blackWeight_concentration = $blackWeight * $concentrationFactor;
+                      
+                        // Calculate the weight of each primary color in Cyan and Magenta
+                        $cyanRedWeight = $red > 0 ? ($C * $R * $totalColorWeight) / $red : 0;
+                        $cyanGreenWeight = $green > 0 ? ($C * $G * $totalColorWeight) / $green : 0;
+                        $cyanBlueWeight = $blue > 0 ? ($C * $B * $totalColorWeight) / $blue : 0;
+
+                        $magentaRedWeight = $red > 0 ? ($M * $R * $totalColorWeight) / $red : 0;
+                        $magentaGreenWeight = $green > 0 ? ($M * $G * $totalColorWeight) / $green : 0;
+                        $magentaBlueWeight = $blue > 0 ? ($M * $B * $totalColorWeight) / $blue : 0;
+
+                        // Calculate the weight of each primary color for the specified concentration
+                        $cyanRedWeight_concentration = $cyanRedWeight * $concentrationFactor;
+                        $cyanGreenWeight_concentration = $cyanGreenWeight * $concentrationFactor;
+                        $cyanBlueWeight_concentration = $cyanBlueWeight * $concentrationFactor;
+
+                        $magentaRedWeight_concentration = $magentaRedWeight * $concentrationFactor;
+                        $magentaGreenWeight_concentration = $magentaGreenWeight * $concentrationFactor;
+                        $magentaBlueWeight_concentration = $magentaBlueWeight * $concentrationFactor;
+    
                     ?>
-                    <h2>CMYK Values:</h2>
+                    <h4>CMYK Values:</h4>
                     <p>C: <?php echo ($C * 100); ?>%</p>
                     <p>M: <?php echo ($M * 100); ?>%</p>
                     <p>Y: <?php echo ($Y * 100); ?>%</p>
                     <p>K: <?php echo ($K * 100); ?>%</p>
 
-                    <h2>Color Quantity Required for 100% Concentration (in grams):</h2>
+                    <h4>Color Quantity Required for 100% Concentration (in grams):</h4>
                     <p>Cyan: <?php echo number_format($cyanWeight, 2); ?> g</p>
                     <p>Magenta: <?php echo number_format($magentaWeight, 2); ?> g</p>
                     <p>Yellow: <?php echo number_format($yellowWeight, 2); ?> g</p>
                     <p>Black: <?php echo number_format($blackWeight, 2); ?> g</p>
 
-                    <h2>Color Quantity Required for <?php echo $concentration; ?>% Concentration (in grams):</h2>
+                    <h4>Color Quantity Required for <?php echo $concentration; ?>% Concentration (in grams):</h4>
                     <p>Cyan: <?php echo number_format($cyanWeight_concentration, 2); ?> g</p>
                     <p>Magenta: <?php echo number_format($magentaWeight_concentration, 2); ?> g</p>
                     <p>Yellow: <?php echo number_format($yellowWeight_concentration, 2); ?> g</p>
                     <p>Black: <?php echo number_format($blackWeight_concentration, 2); ?> g</p>
+                    
+                    <h4>Weight of Primary Colors in Cyan (for 100% Concentration):</h4>
+                    <p>Red: <?php echo number_format($cyanRedWeight, 2); ?> g</p>
+                    <p>Green: <?php echo number_format($cyanGreenWeight, 2); ?> g</p>
+                    <p>Blue: <?php echo number_format($cyanBlueWeight, 2); ?> g</p>
+
+                    <h4>Weight of Primary Colors in Magenta (for 100% Concentration):</h4>
+                    <p>Red: <?php echo number_format($magentaRedWeight, 2); ?> g</p>
+                    <p>Green: <?php echo number_format($magentaGreenWeight, 2); ?> g</p>
+                    <p>Blue: <?php echo number_format($magentaBlueWeight, 2); ?> g</p>
+
+                    <h4>Weight of Primary Colors in Cyan (for <?php echo $concentration; ?>% Concentration):</h4>
+                    <p>Red: <?php echo number_format($cyanRedWeight_concentration, 2); ?> g</p>
+                    <p>Green: <?php echo number_format($cyanGreenWeight_concentration, 2); ?> g</p>
+                    <p>Blue: <?php echo number_format($cyanBlueWeight_concentration, 2); ?> g</p>
+
+                    <h4>Weight of Primary Colors in Magenta (for <?php echo $concentration; ?>% Concentration):</h4>
+                    <p>Red: <?php echo number_format($magentaRedWeight_concentration, 2); ?> g</p>
+                    <p>Green: <?php echo number_format($magentaGreenWeight_concentration, 2); ?> g</p>
+                    <p>Blue: <?php echo number_format($magentaBlueWeight_concentration, 2); ?> g</p>
+
                     <?php
                     }
                     ?>
