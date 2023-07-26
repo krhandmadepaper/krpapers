@@ -14,7 +14,9 @@
             <li class="nav-item">
               <a class="nav-link" href="../../Tools/Index.php">Tools</a>
             </li>
-            
+            <li class="nav-item">
+              <a class="nav-link" href="../../Home/Index.php">Stock Details</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link " href = "../../login/logout.php">Logout</a>
             </li>
