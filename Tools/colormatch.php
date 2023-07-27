@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
-            background-image: url("path/to/your/bg-image.jpg"); /* Replace with your image path */
+            background-color: RGB(<?php echo $_POST["redSlider"];?>,<?php echo $_POST["greenSlider"];?>,<?php echo $_POST["blueSlider"];?>); /* Replace with your image path */
             background-size: cover;
+            
         }
 
         .color-grid {
@@ -43,13 +44,11 @@
 <body>
     <div class="container mt-5">
         <h1 class="mb-4">Color Mixing Calculator</h1>
+        
         <div class="row">
             <div class="col-md-6">
                 <form method="post">
-                    <div class="form-group">
-                        <label for="colorPicker">Color:</label>
-                        <input type="color" id="colorPicker" name="colorPicker" class="form-control" onchange="updateColor('colorPicker')">
-                    </div>
+                    
                     <div class="form-group">
                         <label for="red">Red:</label>
                         <input type="range" id="redSlider" name="redSlider" min="0" max="255" class="form-control-range" oninput="updateSlider('redSlider', 'redText')" <?php if (isset($_POST["redSlider"])) { echo 'value="' . $_POST["redSlider"] . '"'; } ?>>
@@ -108,6 +107,8 @@
                         $magentaWeight = $M * $totalColorWeight;
                         $yellowWeight = $Y * $totalColorWeight;
                         $blackWeight = $K * $totalColorWeight;
+                        // Initialize variables for primary colors in Cyan and Magenta
+                       
 
                         // Calculate the weight of color for the specified concentration
                         $concentrationFactor = $concentration / 100;
@@ -117,24 +118,24 @@
                         $blackWeight_concentration = $blackWeight * $concentrationFactor;
                       
                         // Calculate the weight of each primary color in Cyan and Magenta
-                        $cyanRedWeight = $red > 0 ? ($C * $R * $totalColorWeight) / $red : 0;
-                        $cyanGreenWeight = $green > 0 ? ($C * $G * $totalColorWeight) / $green : 0;
-                        $cyanBlueWeight = $blue > 0 ? ($C * $B * $totalColorWeight) / $blue : 0;
+        $cyanRedWeight = $red > 0 ? ($C * $R * $totalColorWeight) / $red : 0;
+        $cyanGreenWeight = $green > 0 ? ($C * $G * $totalColorWeight) / $green : 0;
+        $cyanBlueWeight = $blue > 0 ? ($C * $B * $totalColorWeight) / $blue : 0;
 
-                        $magentaRedWeight = $red > 0 ? ($M * $R * $totalColorWeight) / $red : 0;
-                        $magentaGreenWeight = $green > 0 ? ($M * $G * $totalColorWeight) / $green : 0;
-                        $magentaBlueWeight = $blue > 0 ? ($M * $B * $totalColorWeight) / $blue : 0;
+        $magentaRedWeight = $red > 0 ? ($M * $R * $totalColorWeight) / $red : 0;
+        $magentaGreenWeight = $green > 0 ? ($M * $G * $totalColorWeight) / $green : 0;
+        $magentaBlueWeight = $blue > 0 ? ($M * $B * $totalColorWeight) / $blue : 0;
 
-                        // Calculate the weight of each primary color for the specified concentration
-                        $cyanRedWeight_concentration = $cyanRedWeight * $concentrationFactor;
-                        $cyanGreenWeight_concentration = $cyanGreenWeight * $concentrationFactor;
-                        $cyanBlueWeight_concentration = $cyanBlueWeight * $concentrationFactor;
+        // Calculate the weight of each primary color for the specified concentration
+        $cyanRedWeight_concentration = $cyanRedWeight * $concentrationFactor;
+        $cyanGreenWeight_concentration = $cyanGreenWeight * $concentrationFactor;
+        $cyanBlueWeight_concentration = $cyanBlueWeight * $concentrationFactor;
 
-                        $magentaRedWeight_concentration = $magentaRedWeight * $concentrationFactor;
-                        $magentaGreenWeight_concentration = $magentaGreenWeight * $concentrationFactor;
-                        $magentaBlueWeight_concentration = $magentaBlueWeight * $concentrationFactor;
+        $magentaRedWeight_concentration = $magentaRedWeight * $concentrationFactor;
+        $magentaGreenWeight_concentration = $magentaGreenWeight * $concentrationFactor;
+        $magentaBlueWeight_concentration = $magentaBlueWeight * $concentrationFactor;
     
-                    ?>
+                        ?>
                     <h4>CMYK Values:</h4>
                     <p>C: <?php echo ($C * 100); ?>%</p>
                     <p>M: <?php echo ($M * 100); ?>%</p>
@@ -154,25 +155,21 @@
                     <p>Black: <?php echo number_format($blackWeight_concentration, 2); ?> g</p>
                     
                     <h4>Weight of Primary Colors in Cyan (for 100% Concentration):</h4>
-                    <p>Red: <?php echo number_format($cyanRedWeight, 2); ?> g</p>
-                    <p>Green: <?php echo number_format($cyanGreenWeight, 2); ?> g</p>
-                    <p>Blue: <?php echo number_format($cyanBlueWeight, 2); ?> g</p>
+    <p>Green: <?php echo number_format($cyanGreenWeight, 2); ?> g</p>
+    <p>Blue: <?php echo number_format($cyanBlueWeight, 2); ?> g</p>
 
-                    <h4>Weight of Primary Colors in Magenta (for 100% Concentration):</h4>
-                    <p>Red: <?php echo number_format($magentaRedWeight, 2); ?> g</p>
-                    <p>Green: <?php echo number_format($magentaGreenWeight, 2); ?> g</p>
-                    <p>Blue: <?php echo number_format($magentaBlueWeight, 2); ?> g</p>
+    <h4>Weight of Primary Colors in Magenta (for 100% Concentration):</h4>
+    <p>Red: <?php echo number_format($magentaRedWeight, 2); ?> g</p>
+    <p>Blue: <?php echo number_format($magentaBlueWeight, 2); ?> g</p>
 
-                    <h4>Weight of Primary Colors in Cyan (for <?php echo $concentration; ?>% Concentration):</h4>
-                    <p>Red: <?php echo number_format($cyanRedWeight_concentration, 2); ?> g</p>
-                    <p>Green: <?php echo number_format($cyanGreenWeight_concentration, 2); ?> g</p>
-                    <p>Blue: <?php echo number_format($cyanBlueWeight_concentration, 2); ?> g</p>
+    <h4>Weight of Primary Colors in Cyan (for <?php echo $concentration; ?>% Concentration):</h4>
+    <p>Green(Basic): <?php echo number_format($cyanGreenWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($cyanWeight_concentration/2); ?> g    </p>
+    <p>Blue(Basic): <?php echo number_format($cyanBlueWeight_concentration, 2); ?> g        For <?php echo $concentration; ?>%  <?php echo number_format($cyanWeight_concentration/2); ?> g    </p>
 
-                    <h4>Weight of Primary Colors in Magenta (for <?php echo $concentration; ?>% Concentration):</h4>
-                    <p>Red: <?php echo number_format($magentaRedWeight_concentration, 2); ?> g</p>
-                    <p>Green: <?php echo number_format($magentaGreenWeight_concentration, 2); ?> g</p>
-                    <p>Blue: <?php echo number_format($magentaBlueWeight_concentration, 2); ?> g</p>
-
+    <h4>Weight of Primary Colors in Magenta (for <?php echo $concentration; ?>% Concentration):</h4>
+    <p>Red(Basic): <?php echo number_format($magentaRedWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($magentaWeight_concentration/2); ?> g    </p>
+    <p>Blue(Basic): <?php echo number_format($magentaBlueWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($magentaWeight_concentration/2); ?> g    </p>
+    
                     <?php
                     }
                     ?>
@@ -197,28 +194,7 @@
             const input = document.getElementById(inputId);
             slider.value = input.value;
         }
-        function updateColor(source) {
-            let red, green, blue;
-
-            if (source === 'colorPicker') {
-                const colorPicker = document.getElementById('colorPicker');
-                red = parseInt(colorPicker.value.substring(1, 3), 16);
-                green = parseInt(colorPicker.value.substring(3, 5), 16);
-                blue = parseInt(colorPicker.value.substring(5, 7), 16);
-            } else if (source === 'redSlider' || source === 'redText') {
-                red = document.getElementById('redSlider').value;
-                document.getElementById('redText').value = red;
-            } else if (source === 'greenSlider' || source === 'greenText') {
-                green = document.getElementById('greenSlider').value;
-                document.getElementById('greenText').value = green;
-            } else if (source === 'blueSlider' || source === 'blueText') {
-                blue = document.getElementById('blueSlider').value;
-                document.getElementById('blueText').value = blue;
-            }
-
-            const colorGrid = document.getElementById('colorGrid');
-            colorGrid.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
-        }
+        
     </script>
      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
