@@ -135,40 +135,48 @@
         $magentaGreenWeight_concentration = $magentaGreenWeight * $concentrationFactor;
         $magentaBlueWeight_concentration = $magentaBlueWeight * $concentrationFactor;
     
+        //to callculate total color weight 
+       
                         ?>
+                        <h4>Total required colors for your Shade</h4>
+                        <p>Red: <?php echo number_format($magentaWeight_concentration/2,2); ?></p>
+                        <p>Blue: <?php echo number_format($cyanWeight_concentration/2 + $magentaWeight_concentration/2,2); ?> g</p>
+                        <p>Green: <?php echo number_format($cyanWeight_concentration/2,2); ?> g</p>
+                        <p>Yellow: <?php echo number_format($yellowWeight_concentration, 2); ?> g</p>
+                        <p>Black: <?php echo number_format($blackWeight_concentration, 2); ?> g</p>
                     <h4>CMYK Values:</h4>
                     <p>C: <?php echo ($C * 100); ?>%</p>
                     <p>M: <?php echo ($M * 100); ?>%</p>
                     <p>Y: <?php echo ($Y * 100); ?>%</p>
                     <p>K: <?php echo ($K * 100); ?>%</p>
 
-                    <h4>Color Quantity Required for 100% Concentration (in grams):</h4>
+                    <!-- <h4>Color Quantity Required for 100% Concentration (in grams):</h4>
                     <p>Cyan: <?php echo number_format($cyanWeight, 2); ?> g</p>
                     <p>Magenta: <?php echo number_format($magentaWeight, 2); ?> g</p>
                     <p>Yellow: <?php echo number_format($yellowWeight, 2); ?> g</p>
-                    <p>Black: <?php echo number_format($blackWeight, 2); ?> g</p>
+                    <p>Black: <?php echo number_format($blackWeight, 2); ?> g</p> -->
 
                     <h4>Color Quantity Required for <?php echo $concentration; ?>% Concentration (in grams):</h4>
                     <p>Cyan: <?php echo number_format($cyanWeight_concentration, 2); ?> g</p>
                     <p>Magenta: <?php echo number_format($magentaWeight_concentration, 2); ?> g</p>
                     <p>Yellow: <?php echo number_format($yellowWeight_concentration, 2); ?> g</p>
                     <p>Black: <?php echo number_format($blackWeight_concentration, 2); ?> g</p>
-                    
+<!--                     
                     <h4>Weight of Primary Colors in Cyan (for 100% Concentration):</h4>
     <p>Green: <?php echo number_format($cyanGreenWeight, 2); ?> g</p>
     <p>Blue: <?php echo number_format($cyanBlueWeight, 2); ?> g</p>
 
     <h4>Weight of Primary Colors in Magenta (for 100% Concentration):</h4>
     <p>Red: <?php echo number_format($magentaRedWeight, 2); ?> g</p>
-    <p>Blue: <?php echo number_format($magentaBlueWeight, 2); ?> g</p>
+    <p>Blue: <?php echo number_format($magentaBlueWeight, 2); ?> g</p> -->
 
     <h4>Weight of Primary Colors in Cyan (for <?php echo $concentration; ?>% Concentration):</h4>
-    <p>Green(Basic): <?php echo number_format($cyanGreenWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($cyanWeight_concentration/2); ?> g    </p>
-    <p>Blue(Basic): <?php echo number_format($cyanBlueWeight_concentration, 2); ?> g        For <?php echo $concentration; ?>%  <?php echo number_format($cyanWeight_concentration/2); ?> g    </p>
+    <p>Green(Basic): <?php echo number_format($cyanGreenWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($cyanWeight_concentration/2,2); ?> g    </p>
+    <p>Blue(Basic): <?php echo number_format($cyanBlueWeight_concentration, 2); ?> g        For <?php echo $concentration; ?>%  <?php echo number_format($cyanWeight_concentration/2,2); ?> g    </p>
 
     <h4>Weight of Primary Colors in Magenta (for <?php echo $concentration; ?>% Concentration):</h4>
-    <p>Red(Basic): <?php echo number_format($magentaRedWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($magentaWeight_concentration/2); ?> g    </p>
-    <p>Blue(Basic): <?php echo number_format($magentaBlueWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($magentaWeight_concentration/2); ?> g    </p>
+    <p>Red(Basic): <?php echo number_format($magentaRedWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($magentaWeight_concentration/2,2); ?> g    </p>
+    <p>Blue(Basic): <?php echo number_format($magentaBlueWeight_concentration, 2); ?> g       For <?php echo $concentration; ?>%  <?php echo number_format($magentaWeight_concentration/2,2); ?> g    </p>
     
                     <?php
                     }
