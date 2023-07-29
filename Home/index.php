@@ -55,7 +55,17 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                 </div>
                 <div class="container" style ="background-color:rgb(195, 201, 194) ;">
                 <div class="row" style="padding-top: 28px;">
-                <div class="col-xl-12">
+                <div class="col-xl-6">
+                    <div class="card" style="background: rgb(228, 224, 224);">
+                        <div class="card-body">
+                          <i class='fas fa-boxes'></i>
+                            <h5 class="card-title" >Tasks</h5>
+                            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+                            <a href="../Tasks/index.php" class="btn btn-primary">Open</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
                     <div class="card" style="background: rgb(228, 224, 224);">
                         <div class="card-body">
                           <i class='fas fa-boxes'></i>
@@ -63,8 +73,8 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
                             <a href="../Shipping/Dashboard.php" class="btn btn-primary">Open</a>
                         </div>
-                      </div>
-                  </div>
+                    </div>
+                </div>
                 </div>
                 </div>
                 </div>

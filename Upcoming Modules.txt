@@ -94,3 +94,6 @@ Step 7: Handling Out-of-Gamut Colors
 In some cases, the mixing ratios may result in out-of-gamut colors, i.e., colors that cannot be represented in the chosen color space. Implement a mechanism to handle such cases, such as clamping the RGB values to the nearest valid values or using color gamut mapping techniques.
 
 Keep in mind that this is a basic example of a color mixing algorithm. Depending on your requirements and the color model you are working with, the algorithm's complexity may vary. For more advanced color mixing scenarios or for subtractive color mixing (e.g., in print), you may need to use different color models and more complex algorithms.
+
+
+Dashboard for tasks
