@@ -74,14 +74,16 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                             echo $daysDifference;
                         ?>
                     </td>
-                    <td><?php $status=$data["completion_status"]; 
-                    if ($status){
-                    echo "completed";
-                    }
-                    else{
-                        echo "In Progress";
-                    }
-                    ?></td>
+                    <td>
+                        <?php $status=$data["completion_status"]; 
+                            if ($status){
+                            echo "completed";
+                            }
+                            else{
+                            echo "In Progress";
+                            }
+                        ?>
+                    </td>
                   </tr>
             <?php
                 }

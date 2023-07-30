@@ -9,10 +9,10 @@
           <ul class="navbar-nav mr-auto">
             
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../Home/index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="available_data.php">Available data</a>
+              <a class="nav-link" href="../Orders/Index.php">Orders</a>
             </li>
             
             <li class="nav-item dropdown">
@@ -20,7 +20,7 @@
                 Pages
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="../Orders/Admin">Orders</a>
+                <a class="dropdown-item" href="taskentry.php">Create Tasks</a>
                 <a class="dropdown-item" href="../Tools">Tools</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../Suppliers">Suppliers</a>
