@@ -5,8 +5,12 @@ $pwd = $_POST['pwd'];
 include "connection.php";
 
 if ($con) {
-    $sql = "SELECT * FROM `Login` WHERE id ='$id' AND Password = '$pwd'";
-    $result = mysqli_query($con, $sql);
+    $sql = "SELECT * FROM `Login` WHERE id =? AND Password = ?";
+    $stmt = $con->prepare($sql);
+
+    $stmt->bind_param("ss", $id, $pwd);
+    $stmt->execute();
+    $result = $stmt->get_result();
     $result1 = mysqli_fetch_assoc($result);
     $row = mysqli_num_rows($result);
 
