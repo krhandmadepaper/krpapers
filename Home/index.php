@@ -91,7 +91,10 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
 
 <?php
 } else {
-    header("Location: ../login/login.php"); // Redirect to the login page if not logged in or not an Admin
+    // header("Location:../login/login.php"); // Redirect to the login page if not logged in or not an Admin
+    ?><script>
+            window.location.href = "../login/login.php";
+        </script><?php
     exit();
 }
 ?>
