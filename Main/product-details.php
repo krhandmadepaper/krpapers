@@ -56,7 +56,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center">
 
-      <h6 class="logo me-auto"><a href="index.html">KR Handmade Paper </a></h6>
+      <h6 class="logo me-auto"><a href="index.html">Fly High Papers </a></h6>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       
@@ -150,7 +150,7 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      <h3>KR Handmade Papers</h3>
+      <h3>Fly High Papers</h3>
       <p>Made with Love, Hardwork, and Compassion</p>
       <div class="social-links">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -160,7 +160,7 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>KR Handmade Paper</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Fly High Papers</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
