@@ -115,7 +115,7 @@
             <div class="icon-box">
               <div class="icon">
                 <a href="product-details.php?productid=<?php echo $data["product_id"]; ?> ">
-                    <img src="<?php echo $data["image"]; ?>"  class="img-fluid rounded" alt="Example Image">
+                    <img src="assets/img/products/<?php echo $data["image"]; ?>"  class="img-fluid rounded" alt="Example Image">
                 </a>      
               </div>
               <h4 class="title"><a href="product-details.php?productid=<?php echo $data["product_id"]; ?> "><?php echo $data["product_name"]; ?></a></h4>

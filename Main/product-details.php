@@ -17,6 +17,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -31,6 +32,22 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
+  <style>
+    /* Define the custom CSS class "custom-bullet-list" */
+.custom-bullet-list {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 20px; /* Add some space between the bullet point and the text */
+}
+
+/* Define the custom style for the bullet points using ::before pseudo-element */
+.custom-bullet-list li::before {
+    content: "\2022"; /* Unicode character for bullet point (•) */
+    color: green; /* Set the desired color for the bullet points */
+    display: inline-block;
+    width: 1em; /* Adjust the width of the bullet point */
+    margin-left: -1em; /* Set negative margin to align the bullet point properly */
+}
+    </style>
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -104,16 +121,16 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img src="<?php echo $data["image"]; ?>" alt="">
-                </div>
-
-                <!-- <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-2.jpg" alt="">
+                  <img src="assets/img/products/<?php echo $data["image"]; ?>" alt="">
                 </div>
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-3.jpg" alt="">
-                </div> -->
+                  <img src="assets/img/products/<?php echo $data["image"]; ?>" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/products/<?php echo $data["image"]; ?>" alt="">
+                </div>
 
               </div>
               <div class="swiper-pagination"></div>
@@ -131,13 +148,24 @@
               <!-- <h2><?php echo $data["product_name"]; ?></h2> -->
               <br>
               <ul>
-                <h3>Features</h3>
+                <h3>Product details</h3>
                 <h5><li>GSM     :- <strong><?php echo $data["gsm"]; ?></strong></li><h5>
                 <h5><li>Color   :- <strong><?php echo $data["color"]; ?></strong></li><h5>
                 <h5><li>Size    :- <strong><?php echo $data["size"]; ?> inch</strong></li><h5>
                 <h5><li>Pack of :- <strong><?php echo $data["packof"]; ?></strong></li><h5>
-
                 <h5><li>Cost    :- ₹ <strong><?php echo $data["cost"]; ?></strong></li><h5>
+                  <br>
+                <h3>Features</strong><h3>
+
+                  <ul class="custom-bullet-list"> 
+                  <h6><li>Made in India</li><h6>
+                  <h6><li>Chemical Free Paper </li><h6>
+                  <h6><li>Suitable for Printing, Calligraphy, Screenprinting</li><h6>
+                  <h6><li>Made with Cotton Rag</li><h6>
+                  <h6><li>Eco-Friendly, Acid Free, Tree Free Paper </li><h6>
+
+                  </ul>
+
               </ul>
             </div>
           </div>
