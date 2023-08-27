@@ -105,6 +105,5 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
     ?><script>
             window.location.href = "../login/login.php";
         </script><?php
-    exit();
 }
 ?>
