@@ -78,8 +78,7 @@
           <li><a class="nav-link scrollto " href="index.html#story">Our Story</a></li>          
           <li><a class="nav-link scrollto " href="index.html#services">Services</a></li>
           <li><a class="nav-link scrollto" href="index.html#products">Gallery</a></li>          
-          <li><a class="nav-link scrollto" href="product.php">Products</a></li>
-          <li><a class="nav-link scrollto" href="index.htmlproduct.php">Shop</a></li>
+          <li><a class="nav-link scrollto" href="index.html#product.php">Shop</a></li>
           <li><a class="nav-link scrollto" href="index.html#contact">Contact</a></li>
           <li><a class="nav-link scrollto" href="../home/index.php">Login</a></li>
         </ul>
