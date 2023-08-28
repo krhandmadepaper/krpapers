@@ -5,11 +5,9 @@ session_start();
 if (isset($_SESSION['user_id']) && isset($_SESSION['user_type'])) {
     // Redirect to the appropriate dashboard based on the user's type
     if ($_SESSION['user_type'] === 'Admin') {
-        header("Location: ../Orders/Admin/dashboard.php");
-        exit();
+        header("Location: ../Home/index.php");
     } elseif ($_SESSION['user_type'] === 'Client') {
         header("Location: ../Orders/Client/dashboard.php");
-        exit();
     }
 }
 ?>
