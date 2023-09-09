@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                           <i class='fas fa-boxes'></i>
                             <h5 class="card-title" >Suppliers</h5>
                             <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-                            <a href="../Suppliers/Dashboard.php" class="btn btn-primary">Open</a>
+                            <a href="add_supplier.php" class="btn btn-primary">Open</a>
                         </div>
                     </div>
                 </div>
