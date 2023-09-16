@@ -27,6 +27,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
             <!-- <a style= "background-color:rgb(233,154,125);font-color:black" class="col-xl-2 nav-link previous " href="javascript:history.back()">Previous</a> -->
             <a class="btn btn-danger" href="javascript:history.back()">Previous</a>
  
+            <div class="row" style="padding-top: 28px;padding-bottom: 10px;"></div>
             <tr>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>

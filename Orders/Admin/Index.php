@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
               <a href="add_stock.php">
                 <i class='fas fa-dolly'></i>
                   <h5 class="card-title">
-                    <a href="available_data.php">Ongoing Orders</a>
+                    <a href="ongoing_orders.php">Ongoing Orders</a>
                   </h5>
                   <!-- <a href="available_data.php" class="btn btn-primary">Open</a>
               </a> -->
