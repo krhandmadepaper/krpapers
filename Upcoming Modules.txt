@@ -1,3 +1,16 @@
+By Ayush
+
+Biling details
+add each sales based on customer id  product,gsm drop down, rate, quantity, total=rate* quantity, 
+gst dropdown select %age, gst total = gst %age * total, G total= gst+ total 
+
+add each incoming payment based on customer id
+add monthly delivery charges based on customer id
+insert the data into database
+fetch the data based on customer id in excel n pdf format
+
+https://chat.openai.com/share/3f0b2e06-d231-48ac-a3d3-bb046d537c64
+
 Gsm calculator
 	size drop down
 Bucket calculator for pulp 
