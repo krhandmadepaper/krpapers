@@ -25,7 +25,22 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
     <!-- <a class="nav-link previous active" href="javascript:history.back()">Previous</a> -->
     <a class="btn btn-danger"  href="javascript:history.back()">Previous</a>
 
-    <div class="row" style="padding-top: 28px;padding-bottom: 28px;">  
+  <div class="row" style="padding-top: 28px;padding-bottom: 28px;">  
+       
+    <div class="col-xl-4">
+          <div class="card" style="background: white">
+            <div class="card-body">
+              <a href="add_stock.php">
+                <i class='fas fa-dolly'></i>
+                  <h5 class="card-title">
+                    <a href="order_entry.php">Add an Order</a>
+                  </h5>
+                  <!-- <a href="available_data.php" class="btn btn-primary">Open</a>
+              </a> -->
+            </div>
+          </div>
+        </div>
+
         <div class="col-xl-4">
           <div class="card" style="background: white">
             <div class="card-body">
@@ -50,6 +65,10 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
             </div>
           </div>
         </div>
+
+        <div class="container" style ="background-color:rgb(195, 201, 194) ;">
+        <div class="row" style="padding-top: 28px;">
+
         <div class="col-xl-4">
           <div class="card" style="white">
             <div class="card-body">
