@@ -37,6 +37,22 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
             }
             return true;
         }
+
+    function addAnotherProduct() {
+        // Clone the product entry section
+        var productEntrySection = document.querySelector('.product-entry-section').cloneNode(true);
+
+        // Clear the input values in the cloned section
+        var inputs = productEntrySection.querySelectorAll('input, select, textarea');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = '';
+        }
+
+        // Append the cloned section to the container
+        document.getElementById('product-entry-container').appendChild(productEntrySection);
+    }
+
+
     </script>
        <?php include "navbar.php" ?>
 
@@ -57,18 +73,22 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                                 <div class="contact-wrap">
                                     <h1 class="mb-12 text-center" style="font-family:">Add an Order</h1>
                                     <div id="form-message-warning" class="mb-4 w-100 text-center"></div>
-                                    <div id="form-message-success" class="mb-4 w-100 text-center">
-                                    Add a Product
-                                    </div>
-                                    <form method="POST" action="backend/add-product-reply.php" enctype="multipart/form-data" class="contactForm ">
-                                        <div class="row">
+                                    <div id="form-message-success" class="mb-4 w-100 text-center"></div>
+
+
+                                    
+
+
+                                    <form method="POST" action="backend/add-product-reply.php" enctype="multipart/form-data" class="contactForm product-entry-section" >
+                                        <div class="row" >
                                             <div class="col-md-12 lab">
                                                 <div class="form-group">
                                                     <label  style="font-size:x-large;">Client Id</label>
                                                     <input type="text" name="cid" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="client id" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 lab">
+                                        <!-- <div class = "product-entry-section">   -->
+                                            <div class="col-md-4 lab ">
                                                 <div class="form-group">
                                                     <label style="font-size:x-large;">Product Name</label>
                                                     <!-- <select name='Item'  class="form-control" style="font-color:black;" >
@@ -77,13 +97,15 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                                                     <input type="text" name="pname" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="product name" required>
                                                 </div>
                                             </div> 
-                                            <div class="col-md-4 lab">
+
+                                            <div class="col-md-4 lab ">
                                                 <div class="form-group">
                                                     <label style="font-size:x-large;">Quantity</label>
                                                     <input type="text" name="quant" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="quantity" required>
                                                 </div>
-                                            </div>                                  
-                                            <div class="col-md-4 lab">
+                                            </div>   
+                                                                        
+                                            <div class="col-md-4 lab ">
                                                 <div class="form-group">
                                                     <label style="font-size:x-large;">GSM</label>
                                                     <select name='gsm'  class="form-control" style="font-color:black;background-color:RGB(190, 157, 147 )" >
@@ -105,37 +127,52 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
                                                     <!-- <input type="text" name="rate" class="form-control" placeholder="Rate per Kg" required> -->
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 lab">
+                                            <div class="col-md-6 lab ">
                                                 <div class="form-group">
                                                     <label style="font-size:x-large;">Color</label>
                                                     <input type="text" name="color" class="form-control"style="background-color:RGB(190, 157, 147 )" placeholder="Color" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 lab">
+                                            <div class="col-md-6 lab ">
                                                 <div class="form-group">
-                                                    <label style="font-size:x-large;">Size</label>
-                                                    <input type="text" name="size" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="Size" required>
+                                                   <label style="font-size:x-large;">Size</label>
+
+                                                   <br>
+
+                                                   
+                                                   <input type="radio" style="background-color:RGB(190, 157, 147 );  height: 40%;  display: inline;">inch
+                                                   <input type="radio" style="background-color:RGB(190, 157, 147 );  height: 40%;  display: inline;">cm
+                                                   
+                                                   
+                                                   <br>
+
+                                                   <input type="text" name="length" class="form-control" style="background-color:RGB(190, 157, 147 ); width: 30%; height: 40%;  display: inline;" placeholder="length" required >
+
+                                                   <input type="text" name="breadth" class="form-control" style="background-color:RGB(190, 157, 147 ); width: 30%; height: 40%; display: inline;" placeholder="breadth" required >
+
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 lab">
+                                            <div class="col-md-12 lab ">
                                                 <div class="form-group">
                                                     <label style="font-size:x-large;">Some other Instructions</label>
                                                     <textarea  name="instructions" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="instructions" required></textarea>
                                                 </div>
                                             </div>
-                                            <div class="col-md-12 lab">
+                                            <div class="col-md-12 lab " id="product-entry-container">
                                                 <div class="form-group">
-                                                    <a href = "">Add another Product </a>
+                                                    <a href = "#" onclick = "addAnotherProduct()">Add another Product </a>
                                                     <br>
                                                     <!-- <input type="file" id="image" accept="image/*" capture="camera" name="image" class="  custom-file-upload" placeholder="image" required> -->
                                                 </div>
                                             </div>
 
-                                            <div class="container" style ="background-color:rgb(248, 223, 171) ;">
-                                            <div class="row" style="padding-top: 28px;">
+                                            <!-- </div>   -->
 
+                                            <div class="container " style ="background-color:rgb(248, 223, 171) ;">
+                                            <div class="row " style="padding-top: 28px;">
 
-                                            <div style="text-align: center;" class="col-md-12">
+                                        </div>    
+                                            <div style="text-align: center;" class="col-md-12 product-entry-section">
                                                 <div class="form-group">
                                                     <button type="submit"  class="btn btn-dark"> Submit</button>
                                                 </div>
