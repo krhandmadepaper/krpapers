@@ -24,6 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $unit = $_POST['unit'];
     $length = $_POST['length'];
     $breadth = $_POST['breadth'];
+    $shipping = $_POST['shipping'];
     $instructions = $_POST['instructions'];
 
     // Create an array to store the current product entry
@@ -36,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'unit' => $unit,
         'length' => $length,
         'breadth' => $breadth,
+        'shipping' => $shipping,
         'instructions' => $instructions,
     ];
 
@@ -244,8 +246,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                             </div>
                                             <div class="col-md-12 lab ">
                                                 <div class="form-group">
+                                                    <label style="font-size:x-large;">Shipping Details</label>
+                                                    <input type="text" name="shipping" id="shipping" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="address"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 lab ">
+                                                <div class="form-group">
                                                     <label style="font-size:x-large;">Some other Instructions</label>
-                                                    <textarea  name="instructions" id="instructions" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="instructions"></textarea>
+                                                    <input type="text" name="instructions" id="instructions" class="form-control" style="background-color:RGB(190, 157, 147 )" placeholder="instructions"></textarea>
                                                 </div>
                                             </div>
                                             <!-- <div class="col-md-12 lab " id="product-entry-container">
