@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
         <div class="container" style="padding:30px;"></div>
           <div class="container" style ="background-color:rgb(195, 201, 194) ;padding-top:20px; border-radius:10px;">
             <!-- <a class="nav-link previous active" href="javascript:history.back()">Previous</a><i class="fas fa-cat"></i> -->
-            <a class="btn btn-danger"  href="javascript:history.back()">Previous</a>
+            <!-- <a class="btn btn-danger"  href="javascript:history.back()">Previous</a> -->
 
               <div class="row" style="padding-top: 28px;padding-bottom: 28px;">  
 
