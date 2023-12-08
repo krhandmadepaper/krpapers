@@ -74,7 +74,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
 <div style="text-align: center;" class="col-md-12">
   <div class="form-group">
     <form method="post">
-      <button type = "submit" class="btn btn-dark">Add to Cart</button>
+      <button type = "submit" class="btn btn-dark">Place Order</button>
     </form>
   </div>
 </div>
@@ -87,7 +87,12 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
   if($con)
   {
 
-    $sql1 = "INSERT INTO `new_order_meta_data`(`order_id`, `client_id`, `shipping_details`) VALUES (1, '{$productEntry['client_id']}', '{$productEntry['shipping']}')";
+    // Querying the database for the latest order id and increamenting it for the creation of next order id.
+    $result = mysqli_query($con, "SELECT MAX(order_id) AS max_order_id FROM new_order_meta_data");
+    $row = mysqli_fetch_assoc($result);
+    $next_order_id = $row['max_order_id'] + 1;
+
+    $sql1 = "INSERT INTO `new_order_meta_data`(`order_id`, `client_id`, `shipping_details`) VALUES ($next_order_id, '{$productEntry['client_id']}', '{$productEntry['shipping']}')";
 
     $result1 = mysqli_query($con,$sql1);
 
@@ -96,13 +101,20 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_type'] === 'Admin') {
       $cookieName = 'product_' . $j;
       $productEntry = json_decode($_COOKIE[$cookieName], true);
       $sql2="INSERT INTO `new_order_details`(`order_id`, `product_name`, `colour`, `size_unit`, `length`, `breadth`, `quantity`, `gsm`, `instructions`) 
-      VALUES (1, '{$productEntry['product_name']}', '{$productEntry['color']}', '{$productEntry['unit']}', '{$productEntry['length']}', '{$productEntry['breadth']}', '{$productEntry['quantity']}', '{$productEntry['gsm']}', '{$productEntry['instructions']}')";
+      VALUES ($next_order_id, '{$productEntry['product_name']}', '{$productEntry['color']}', '{$productEntry['unit']}', '{$productEntry['length']}', '{$productEntry['breadth']}', '{$productEntry['quantity']}', '{$productEntry['gsm']}', '{$productEntry['instructions']}')";
+      $result2 = mysqli_query($con,$sql2);
       $j++;
     }
-      $result2 = mysqli_query($con,$sql2);
       if($result1 && $result2){
-          echo "data entered";
-          // header("Location:submitted.php");
+
+        for ($j = 1; $j <= $productCount; $j++) {
+          $cookieName = 'product_' . $j;
+          setcookie($cookieName, "", time() - 3600, '/');
+        }
+        setcookie('product_count', "", time() - 3600, '/');
+
+          // echo "data entered";
+          header("Location:submitted.php");
       }
       else{
           echo "fail";

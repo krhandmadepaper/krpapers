@@ -50,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Increment the product count and update the count cookie
     $productCount++;
     setcookie('product_count', $productCount, time() + 3600, '/');
+    $temp = 1;
 }
 
 // Display the form
@@ -277,6 +278,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                                     <button type = "submit" class="btn btn-dark">Add to Cart</button>
                                                 </div>
                                             </div>
+
+                                            <?php
+                                                if($temp === 1){
+                                                    echo "product added to cart";
+                                                }
+                                            ?>
                                             
 
                                         </div>
